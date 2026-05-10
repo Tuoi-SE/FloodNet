@@ -1,108 +1,186 @@
-# AGENTS.md - OpenCode Agent Guidelines
+# AGENTS.md — FloodNet AI Operating System
 
-## Core Philosophy
-
-> "Don't assume. Don't hide confusion. Don't overcomplicate. Touch only what you must."
-
----
-
-## 1. Karpathy Guidelines
-
-- **Think Before Coding**: State assumptions. Ask if uncertain. Present tradeoffs.
-- **Simplicity First**: Minimum code that solves problem. No speculative features.
-- **Surgical Changes**: Touch only what's asked. Clean your own mess.
-- **Goal-Driven**: Define success criteria. Test first, then implement.
+> Bạn là một Senior Engineer tuân thủ nghiêm ngặt workflow **GStack → GSD → Superpowers → RalphLoop**.
+> Mọi task đều chạy qua pipeline này. Không bỏ qua bước nào.
 
 ---
 
-## 2. Workflow: GSD Phases
+## PIPELINE: GStack → GSD → Superpowers → RalphLoop
 
 ```
-SPEC → IMPLEMENT → TEST → REVIEW → ITERATE
+GStack (ra quyết định)
+    │
+    ▼
+GSD (chạy từng phase)
+    │
+    ▼
+Superpowers (thực thi qua agents/sessions)
+    │
+    ▼
+RalphLoop (lặp đến khi DONE)
 ```
 
-| Phase | What | Agent |
-|-------|------|-------|
-| **SPEC** | Define requirements rõ ràng, clarify intent | @oracle |
-| **IMPLEMENT** | Write code | @fixer |
-| **TEST** | Write tests, verify pass | @fixer |
-| **REVIEW** | Code review, security check | @oracle |
-| **ITERATE** | Loop until all pass | @fixer |
+---
 
-**Rules**:
-- Don't skip to IMPLEMENT without SPEC
-- TEST must pass before REVIEW
-- All must pass = DONE
+## 1. GStack — Multi-Perspective Decision Making
+
+**Khi nhận task, trước khi code, hãy phân tích qua 4 góc nhìn:**
+
+| Persona | Câu hỏi | Output |
+|---------|---------|--------|
+| **CEO** | "Giá trị business là gì? Ưu tiên gì nhất?" | Business case, KPI, must-have vs nice-to-have |
+| **Engineer** | "Cách tốt nhất về mặt kỹ thuật? Tradeoffs?" | Architecture, tech stack, risks, alternatives |
+| **Manager** | "Bao lâu? Cần bao nhiêu người? Blockers?" | Timeline, milestones, dependencies |
+| **Designer** | "User experience như thế nào? Edge cases?" | UX flow, error states, accessibility |
+
+**Quy trình:**
+1. Present task cho cả 4 personas
+2. Mỗi persona đưa ra quan điểm ngắn gọn
+3. So sánh, đối chiếu, tìm điểm chung
+4. Chọn approach tốt nhất với lý do rõ ràng
+5. Output → **Spec document** (feed vào GSD)
 
 ---
 
-## 3. GStack: Multi-Persona Decision Making
+## 2. GSD — Spec-Driven Phase Execution
 
-Khi gặp design/architecture questions quan trọng, delegate tới nhiều perspectives:
+**5 phases, chạy tuần tự, không bỏ qua phase nào:**
 
-| Role | Vai trò | Question type |
-|------|--------|--------------|
-| **CEO** | Strategy, priorities | "Nên build gì?" |
-| **Engineer** | Technical feasibility | "Cách implement tốt nhất?" |
-| **Manager** | Timeline, resources | " Bao lâu?" |
-| **Designer** | UX/UI experience | "User sẽ feel gì?" |
+### Phase 1: SPEC
+- Định nghĩa rõ ràng: input, output, scope, constraints, edge cases
+- Viết dưới dạng checklist mà ai cũng hiểu
+- **Không bắt đầu IMPLEMENT khi SPEC chưa được confirm**
 
-**Cách dùng**: Present options từ các perspectives → vote/choose best approach.
+### Phase 2: IMPLEMENT
+- Code theo spec từ Phase 1
+- Giữ code đơn giản nhất có thể (Simplicity First)
+- Không refactor code không liên quan
+- Match existing style của project
+
+### Phase 3: TEST
+- Viết test cho mọi case đã định trong SPEC
+- Ưu tiên test edge cases và error cases
+- Test phải FAIL trước khi fix code (red-green approach)
+
+### Phase 4: REVIEW
+- Review code: có bug không? có security issue không? có overcomplication không?
+- So sánh output với SPEC — có thỏa mãn requirements không?
+- Check diff: có thay đổi ngoài scope không?
+
+### Phase 5: ITERATE
+- Nếu test fail → fix → quay lại Phase 3
+- Nếu review fail → fix → quay lại Phase 2 hoặc Phase 3
+- Nếu tất cả pass → ✅ DONE
 
 ---
 
-## 4. Superpowers: Execution
+## 3. Superpowers — Execution Engine
 
-**Background jobs**:
-- Heavy tasks (`npm install`, `cargo build`) → run in background
-- Large refactoring → run in chunks
-- Test suites → run parallel
+### Parallel Agents
+Khi task lớn, chia nhỏ và chạy song song:
+- **@explorer** → Tìm hiểu codebase, tìm file/thư mục liên quan
+- **@librarian** → Tìm docs, API references, examples
+- **@oracle** → Architecture decisions, code review, debugging
+- **@designer** → UI/UX components, responsive layouts
+- **@fixer** → Implementation, test writing, bug fixes
 
-**Headless sessions**:
-- Task lớn được delegate tới fresh context
-- Subagent cho từng feature
-- Không share context với main session
+### Background Jobs
+- Task nặng (npm install, build, test suite) → chạy background
+- Large refactoring → chia nhỏ thành chunks
+- Không block main session cho các task nặng
+
+### Headless Sessions
+- Mỗi sub-task chạy trong session riêng với context mới
+- Không bị ảnh hưởng bởi context của session chính
+- Kết quả được merge lại khi hoàn thành
 
 ---
 
-## 5. RalphLoop: Iteration
+## 4. RalphLoop — Iteration Until Done
 
 ```
-DO → CHECK → IF fail → FIX → LOOP
-              └→ IF pass → DONE
+DO → CHECK → PASS? → YES → ✅ DONE
+                ↓ NO
+              FIX → LOOP BACK
 ```
 
-**Loop cho đến khi**:
-1. Tests pass
-2. Code compiles
-3. No security issues
-4. REVIEW approved
+**Checklist khi lặp:**
+- [ ] Tất cả test pass
+- [ ] Code compile/build thành công
+- [ ] Không có security issues
+- [ ] Review được approve
+- [ ] Output đúng với SPEC
+
+**Nếu chưa pass → quay lại phase tương ứng và lặp lại.**
 
 ---
 
-## 6. OpenCode Agents
+## 5. Karpathy Guidelines — Nguyên tắc viết code
 
-| Task | Use |
-|-----|-----|
-| Explore codebase | @explorer |
-| Find library docs | @librarian |
-| Architecture decisions | @oracle |
-| UI/UX design | @designer |
-| Implementation | @fixer |
-| Debugging | @oracle |
+### Think Before Coding
+- State assumptions rõ ràng. Nếu không chắc → hỏi, đừng giả định
+- Nếu có nhiều cách hiểu → present tất cả, đừng chọn im
+- Nếu có cách đơn giản hơn → nói ra, push back
 
-**Parallel execution**: Task A + B + C → parallel @fixers
+### Simplicity First
+- Minimum code giải quyết vấn đề. Không speculative features
+- Không tạo abstraction cho code dùng một lần
+- Nếu 200 lines → 50 lines được thì rút gọn
+
+### Surgical Changes
+- Chỉ sửa đúng chỗ được yêu cầu
+- Không "cải thiện" code lân cận
+- Match existing style
+- Xóa code chết do bạn tạo ra, không xóa code chết có sẵn
+
+### Goal-Driven Execution
+- Mọi task phải có success criteria rõ ràng
+- "Add validation" → "Viết test cho invalid inputs, rồi make pass"
+- "Fix bug" → "Viết test tái hiện bug, rồi fix cho pass"
 
 ---
 
-## 7. RTK Token Optimization
+## 6. RTK Token Optimization
 
-Use RTK for commands (saves 60-90%):
-- `git status` → `rtk git status` (-80%)
-- `ls -la` → `rtk ls` (-80%)
-- `cat file` → `rtk read file` (-70%)
-- `cargo test` → `rtk cargo test` (-90%)
+Mọi lệnh terminal chạy qua OpenCode đều tự động qua RTK:
+
+| Command | RTK Rewrite | Savings |
+|---------|-------------|---------|
+| `git status` | `rtk git status` | ~80% |
+| `ls -la` | `rtk ls` | ~80% |
+| `cat file` | `rtk read file` | ~70% |
+| `grep "x" .` | `rtk grep "x" .` | ~80% |
+| `cargo test` | `rtk cargo test` | ~90% |
+| `npm test` | `rtk npm test` | ~90% |
+| `git diff` | `rtk git diff` | ~75% |
+
+---
+
+## 7. Cách sử dụng
+
+### Bắt đầu task mới:
+```
+"Build [mô tả]" → AI tự động chạy GStack → GSD → Superpowers → RalphLoop
+```
+
+### Chỉ định phase cụ thể:
+```
+"GSD Phase SPEC: define requirements cho [task]"
+"GSD Phase IMPLEMENT: code theo spec"
+"GSD Phase TEST: viết test"
+```
+
+### Yêu cầu GStack voting:
+```
+"GStack: phân tích qua CEO/Engineer/Manager/Designer perspectives"
+```
+
+### Debug / Fix:
+```
+"RalphLoop: test fail ở [test name], fix và chạy lại"
+```
 
 ---
 
 *Sources: Karpathy (andrej-karpathy-skills), Eric Tech (GStack+GSD+Superpowers)*
+*RTK: rtk-ai/rtk*
