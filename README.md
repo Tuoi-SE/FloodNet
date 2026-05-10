@@ -4,7 +4,7 @@
   <p><b>Mắt Thần Của Đô Thị - Dẫn Lối Bình An Qua Mùa Mưa Bão</b></p>
 
   <p>
-    <b>Tiếng Việt</b> | <a href="README.en.md">English</a>
+    <b>vi</b> | <a href="README.en.md">en</a>
   </p>
   <p>
     <a href="https://floodnet.vn"><strong>Trải nghiệm sức mạnh của FloodNet »</strong></a>

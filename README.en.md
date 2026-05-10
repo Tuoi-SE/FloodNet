@@ -4,7 +4,7 @@
   <p><b>The Urban Eye - Navigating Safely Through the Storm</b></p>
 
   <p>
-    <a href="README.md">Tiếng Việt</a> | <b>English</b>
+    <a href="README.md">vi</a> | <b>en</b>
   </p>
   <p>
     <a href="https://floodnet.vn"><strong>Experience the power of FloodNet »</strong></a>
@@ -44,9 +44,9 @@ Whenever dark clouds gather, the pulse of megacities seems to choke. Familiar st
 
 We believe the greatest technology is the one that serves humanity silently and effectively.
 
-- **🛡️ The Asset Shield:** No more hydro-locked engines in the middle of a flooded street. FloodNet provides a true picture of water depth, giving commuters the confidence to choose the safest route.
-- **⏱️ The Privilege of Time:** Reclaiming millions of hours that would otherwise be lost in flood-induced traffic gridlocks.
-- **🌐 Strategic Business Vision:** FloodNet's real-time data is the golden key for Logistics giants (Grab, ShopeeFood) to optimize delivery networks, and a vital safety anchor for motor insurance companies.
+- **The Asset Shield:** No more hydro-locked engines in the middle of a flooded street. FloodNet provides a true picture of water depth, giving commuters the confidence to choose the safest route.
+- **The Privilege of Time:** Reclaiming millions of hours that would otherwise be lost in flood-induced traffic gridlocks.
+- **Strategic Business Vision:** FloodNet's real-time data is the golden key for Logistics giants (Grab, ShopeeFood) to optimize delivery networks, and a vital safety anchor for motor insurance companies.
 
 ---
 
@@ -54,9 +54,9 @@ We believe the greatest technology is the one that serves humanity silently and 
 
 The beauty of FloodNet lies in the seamless intersection of community power and deep tech:
 
-- 👁️ **Artificial Intelligence (YOLOv8):** Extracting truth from every pixel. Our AI measures water levels with high precision, completely eliminating human emotional bias.
-- ⚡ **Speed of Light (Real-time):** Every alert is instantly transmitted to the map without delay, because in a storm, every second counts.
-- 🤝 **Frictionless Connection:** One snap and send via Zalo OA. No app installations, no learning curve. It's so simple that anyone can become a vital node in the network.
+- **Artificial Intelligence (YOLOv8):** Extracting truth from every pixel. Our AI measures water levels with high precision, completely eliminating human emotional bias.
+- **Speed of Light (Real-time):** Every alert is instantly transmitted to the map without delay, because in a storm, every second counts.
+- **Frictionless Connection:** One snap and send via Zalo OA. No app installations, no learning curve. It's so simple that anyone can become a vital node in the network.
 
 ---
 
