@@ -74,9 +74,9 @@ Hệ sinh thái FloodNet được xây dựng trên những công nghệ hiện 
 
 ## ![color](https://img.shields.io/badge/-%20%20%20%20%20%20%20-FF5722?style=flat-square) Lộ trình chinh phục
 
-1. **Khởi nguyên (MVP):** Hoàn thiện mạch máu dữ liệu cốt lõi qua Zalo và đánh thức bộ não AI.
-2. **Hòa nhịp (Scaling):** Kết nối hàng vạn camera IP công cộng, mở rộng đôi mắt của hệ thống đến từng ngõ ngách đô thị.
-3. **Thịnh vượng (Business):** Mở cổng API thương mại, kiến tạo hệ sinh thái dữ liệu giá trị cao cho ngành vận tải và bảo hiểm.
+1. **Khởi nguyên:** Hoàn thiện mạch máu dữ liệu cốt lõi qua Zalo và đánh thức bộ não AI.
+2. **Hòa nhịp:** Kết nối hàng vạn camera IP công cộng, mở rộng đôi mắt của hệ thống đến từng ngõ ngách đô thị.
+3. **Thịnh vượng:** Mở cổng API thương mại, kiến tạo hệ sinh thái dữ liệu giá trị cao cho ngành vận tải và bảo hiểm.
 
 ---
 

@@ -74,15 +74,15 @@ The FloodNet ecosystem is built upon the most modern technologies, ensuring peak
 
 ## ![color](https://img.shields.io/badge/-%20%20%20%20%20%20%20-FF5722?style=flat-square) The Journey Ahead
 
-1. **Genesis (MVP):** Perfecting the core data pipeline via Zalo and awakening the AI engine.
-2. **Harmony (Scaling):** Connecting thousands of public IP cameras, expanding the system's vision to every urban corner.
-3. **Prosperity (Business):** Opening commercial API gateways, creating a high-value data ecosystem for the transport and insurance sectors.
+1. **Genesis:** Perfecting the core data pipeline via Zalo and awakening the AI engine.
+2. **Harmony:** Connecting thousands of public IP cameras, expanding the system's vision to every urban corner.
+3. **Prosperity:** Opening commercial API gateways, creating a high-value data ecosystem for the transport and insurance sectors.
 
 ---
 
 <div align="center">
   <p><i>"Don't let the rain wash away the progress of our cities."</i></p>
   <p>Join FloodNet in redrawing the map of safety.</p>
-  <p><b>Partner with us:</b> business@floodnet.vn</p>
-  <p>MIT License © 2024 FloodNet Team</p>
+  <p><b>Partner with us:</b> cuquangtuoi11@gmail.com</p>
+  <p>MIT License © 2026 FloodNet Team</p>
 </div>
