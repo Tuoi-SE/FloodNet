@@ -1,0 +1,25 @@
+{
+  "name": "floodnet",
+  "version": "1.0.0",
+  "private": true,
+  "description": "FloodNet — Mắt Thần Củ Đô Thị",
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "start": "turbo run start",
+    "lint": "turbo run lint",
+    "test": "turbo run test",
+    "type-check": "turbo run type-check",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\"",
+    "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,json,md}\"",
+    "verify": "pnpm run lint && pnpm run type-check && pnpm run test && pnpm run build"
+  },
+  "devDependencies": {
+    "prettier": "^3.2.5",
+    "turbo": "^2.5.0"
+  },
+  "packageManager": "pnpm@9.0.0",
+  "engines": {
+    "node": ">=20"
+  }
+}
