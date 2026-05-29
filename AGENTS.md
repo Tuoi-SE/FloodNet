@@ -60,7 +60,7 @@ Each sub-task runs in isolated session. Results merged on completion.
 ## RalphLoop — Iterate Until All Pass
 
 ```
-DO → CHECK → all pass? → YES → ✅ DONE
+DO → CHECK → all pass? → YES → DONE
                 ↓ NO
               FIX → LOOP
 ```
